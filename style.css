@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #17a2b8;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333333;
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-section input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.input-section button {
+  padding: 10px 24px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.input-section button:hover {
+  background: #0056b3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 2px solid #333333;
+  font-weight: bold;
+}
+
+tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #dddddd;
+}
+
+tfoot td {
+  padding: 12px;
+  text-align: center;
+  border-top: 2px solid #333333;
+}
+
+.edit-btn {
+  color: green;
+  text-decoration: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
