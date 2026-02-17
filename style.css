@@ -4,28 +4,28 @@
   box-sizing: border-box;
 }
 
-/* BASE STYLES - Mobile first (360px and up) */
 body {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-height: 100vh;
   background: #17a2b8;
-  padding: 16px;
+  padding: 20px;
   font-family: "Segoe UI", Arial, Helvetica, sans-serif;
 }
 
 .container {
   background: #ffffff;
-  padding: 20px 16px;
+  padding: 30px;
   border-radius: 12px;
+  max-width: 700px;
   width: 100%;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 h1 {
-  margin-bottom: 20px;
-  font-size: 22px;
+  margin-bottom: 24px;
+  font-size: 28px;
   color: #2c3e50;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -34,21 +34,19 @@ h1 {
 /* Input Section */
 .input-section {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: 10px;
+  margin-bottom: 24px;
 }
 
 .input-section input {
-  flex: 1 1 70%;
-  padding: 12px;
+  flex: 1;
+  padding: 12px 16px;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 15px;
   transition: border-color 0.3s ease;
   outline: none;
   color: #2c3e50;
-  min-width: 0; /* Prevents input overflow */
 }
 
 .input-section input:focus {
@@ -61,18 +59,16 @@ h1 {
 }
 
 .input-section button {
-  flex: 1 1 auto;
-  padding: 12px 20px;
+  padding: 12px 28px;
   background: #007bff;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
-  white-space: nowrap;
 }
 
 .input-section button:hover {
@@ -89,21 +85,17 @@ h1 {
 table {
   width: 100%;
   border-collapse: collapse;
-  display: block;
-  overflow-x: auto; /* Horizontal scroll on small screens */
-  -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
 }
 
 thead th {
   text-align: left;
-  padding: 10px 8px;
+  padding: 12px 16px;
   border-bottom: 2px solid #2c3e50;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 14px;
   color: #2c3e50;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  white-space: nowrap;
 }
 
 tbody tr {
@@ -123,35 +115,29 @@ tbody tr:nth-child(even):hover {
 }
 
 tbody td {
-  padding: 12px 8px;
+  padding: 14px 16px;
   border-bottom: 1px solid #eeeeee;
-  font-size: 13px;
+  font-size: 15px;
   color: #444444;
-  white-space: nowrap;
 }
 
 tfoot td {
-  padding: 12px 8px;
+  padding: 14px 16px;
   text-align: center;
   border-top: 2px solid #2c3e50;
-  font-size: 13px;
+  font-size: 14px;
   color: #888888;
 }
 
 /* Action Buttons */
-.edit-btn,
-.delete-btn {
-  display: inline-block;
-  font-weight: 600;
-  font-size: 13px;
-  cursor: pointer;
-  transition: color 0.2s ease;
-  text-decoration: none;
-}
-
 .edit-btn {
   color: #28a745;
-  margin-right: 10px;
+  text-decoration: none;
+  margin-right: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: color 0.2s ease;
 }
 
 .edit-btn:hover {
@@ -161,6 +147,11 @@ tfoot td {
 
 .delete-btn {
   color: #dc3545;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: color 0.2s ease;
 }
 
 .delete-btn:hover {
@@ -168,69 +159,69 @@ tfoot td {
   text-decoration: underline;
 }
 
-/* TABLET - 600px and up */
-@media (min-width: 600px) {
-  body {
-    align-items: center;
-    padding: 20px;
-  }
-
+/* Responsive */
+/* Responsive */
+@media (max-width: 480px) {
   .container {
-    padding: 24px;
-    max-width: 600px;
+    padding: 16px;
   }
 
   h1 {
-    font-size: 26px;
+    font-size: 22px;
+  }
+
+  /* Fix input + button wrapping */
+  .input-section {
+    flex-wrap: wrap;
   }
 
   .input-section input {
-    font-size: 15px;
+    width: 100%;
+    flex: 1 1 70%;
   }
 
   .input-section button {
-    font-size: 15px;
+    flex: 1 1 auto;
+    padding: 12px 16px;
   }
 
-  thead th {
-    padding: 12px;
+  /* Fix table on small screens */
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  thead th,
+  tbody td,
+  tfoot td {
+    padding: 10px 8px;
     font-size: 13px;
+    white-space: nowrap;
   }
 
-  tbody td {
-    padding: 13px 12px;
-    font-size: 14px;
+  /* Fix Edit/Delete side by side */
+  .edit-btn,
+  .delete-btn {
+    display: inline-block;
+    margin-right: 8px;
   }
 }
-
-/* DESKTOP - 1024px and up */
-@media (min-width: 1024px) {
+@media (max-width: 480px) {
   .container {
-    padding: 30px;
-    max-width: 700px;
+    padding: 20px;
   }
 
   h1 {
-    font-size: 28px;
+    font-size: 22px;
   }
 
-  thead th {
+  .input-section button {
     padding: 12px 16px;
-    font-size: 14px;
   }
 
+  thead th,
   tbody td {
-    padding: 14px 16px;
-    font-size: 15px;
-  }
-
-  tfoot td {
-    padding: 14px 16px;
-    font-size: 14px;
-  }
-
-  .edit-btn,
-  .delete-btn {
-    font-size: 14px;
+    padding: 10px 8px;
+    font-size: 13px;
   }
 }
