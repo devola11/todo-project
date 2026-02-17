@@ -30,11 +30,26 @@ const renderTodos = () => {
   todos.forEach((todo) => {
     const row = document.createElement("tr");
 
-    row.innerHTML = `<td> ${todo.id} </td> <td> ${todo.task}</td> <td> ${todo.date} </td> <td> <span class = "edit-btn">Edit</span> <span class = "delete-btn">Delete</span> </td>
+    row.innerHTML = `<td> ${todo.id} </td> <td> ${todo.task}</td> <td> ${todo.date} </td> <td> <span class = "edit-btn" onclick="editTodo(${todo.id})">Edit</span> <span class = "delete-btn" onclick="deleteTodo(${todo.id})">Delete</span> </td>
     `;
 
     todoBody.appendChild(row);
   });
+};
+
+const deleteTodo = (id) => {
+  todos = todos.filter((todo) => todo.id !== id);
+  renderTodos();
+};
+
+const editTodo = (id) => {
+  const todo = todos.find((todo) => todo.id === id);
+  const newTask = prompt("Edit task:", todo.task);
+
+  if (newTask === null || newTask === "") return;
+
+  todo.task = newTask;
+  renderTodos();
 };
 
 // Event Listener
